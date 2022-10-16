@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9085472-5a6c-42fe-93ce-4ec94d7bb2c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.lab-3_dinamic-structures/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab-3_dynamic-structures/lab-3_dynamic-structures.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab-3_dynamic-structures/structures/SingleLinkedList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab-3_dynamic-structures/Operation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab-3_dynamic-structures/structures/StackOnSingleLinkedList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.lab-3_dinamic-structures/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.lab-3_dinamic-structures/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab-3_dynamic-structures/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/lab-3_dynamic-structures/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab-3_dynamic-structures/structures/SingleLinkedList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/lab-3_dynamic-structures/structures/SingleLinkedList.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "XThreadsFramesViewSplitterKey": "0.35114503",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propDebugger",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -74,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665907420175</updated>
-      <workItem from="1665907429381" duration="6108000" />
+      <workItem from="1665907429381" duration="24705000" />
     </task>
     <servers />
   </component>
@@ -94,5 +98,41 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/lab-3_dynamic-structures/Program.cs</url>
+          <line>92</line>
+          <properties documentPath="D:\folder for trash code\algorithm labs\lab-3_dinamic-structures\lab-3_dynamic-structures\Program.cs" initialLine="92" containingFunctionPresentation="method 'CalculateRPN'">
+            <startOffsets>
+              <option value="3284" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3348" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/lab-3_dynamic-structures/Program.cs</url>
+          <line>87</line>
+          <properties documentPath="D:\folder for trash code\algorithm labs\lab-3_dinamic-structures\lab-3_dynamic-structures\Program.cs" initialLine="87" containingFunctionPresentation="method 'CalculateRPN'">
+            <startOffsets>
+              <option value="3101" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3126" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

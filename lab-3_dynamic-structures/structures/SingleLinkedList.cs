@@ -9,6 +9,7 @@ namespace lab_3_dynamic_structures.structures
     {
         internal SingleLinkedListNode<T> Head { get; set; }
         internal int Count { get; private set; }
+        public bool IsEmpty() => Count == 0;
 
         public SingleLinkedList()
         {
@@ -24,7 +25,25 @@ namespace lab_3_dynamic_structures.structures
 
         public void Add(T value) => AddLast(value);
 
+        public T this[int index] => Find(index).Value;
+
         public SingleLinkedListNode<T> First() => Head;
+
+        public SingleLinkedListNode<T> Find(int index)
+        {
+            if (this.Head == null)
+            {
+                return null;
+            }
+
+            SingleLinkedListNode<T> node = this.Head;
+            for (int i = 0; i < index; i++)
+            {
+                node = node.Next;
+            }
+
+            return node;
+        }
 
         private SingleLinkedListNode<T> AddLast(T value)
         {
@@ -48,6 +67,7 @@ namespace lab_3_dynamic_structures.structures
             {
                 return null;
             }
+
             SingleLinkedListNode<T> node = this.Head;
             while (node.Next != null)
             {
@@ -63,6 +83,7 @@ namespace lab_3_dynamic_structures.structures
             {
                 return null;
             }
+
             SingleLinkedListNode<T> node = this.Head;
             while ((node = node.Next) != null)
             {
@@ -90,7 +111,7 @@ namespace lab_3_dynamic_structures.structures
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator() => this.GetEnumerator();
 
-        public SingleLinkedList<T>.Enumerator GetEnumerator() => new SingleLinkedList<T>.Enumerator(this);
+        public Enumerator GetEnumerator() => new(this);
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
@@ -157,6 +178,66 @@ namespace lab_3_dynamic_structures.structures
 
             void IDeserializationCallback.OnDeserialization(object sender) => throw new PlatformNotSupportedException();
         }
+
+        public void Remove(SingleLinkedListNode<T> element)
+        {
+            var node = Find(element);
+            SingleLinkedListNode<T> nodeBefore;
+            if (this.Head.Equals(node))
+            {
+                var rmNode = Head;
+                Head = null;
+            }
+            else
+            {
+                nodeBefore = FindNodeBefore(node);
+                nodeBefore.Next = node.Next;
+            }
+            --this.Count;
+        }
+
+        private SingleLinkedListNode<T> FindNodeBefore(SingleLinkedListNode<T> node)
+        {
+            if (this.Head == null)
+            {
+                return null;
+            }
+
+            SingleLinkedListNode<T> nodeBefore = this.Head;
+            while (nodeBefore != null)
+            {
+                if (nodeBefore.Next.Equals(node))
+                {
+                    return nodeBefore;
+                }
+
+                nodeBefore = nodeBefore.Next;
+            }
+
+            return null;
+        }
+
+        public SingleLinkedListNode<T> Find(SingleLinkedListNode<T> findNode)
+        {
+            if (this.Head == null)
+            {
+                return null;
+            }else if (this.Head.Equals(findNode))
+            {
+                return Head;
+            }
+
+            SingleLinkedListNode<T> node = this.Head;
+            while ((node = node.Next) != null)
+            {
+                if (node.Equals(findNode))
+                {
+                    return node;
+                }
+            }
+
+            return null;
+        }
     }
 
     public class SingleLinkedListNode<T>
@@ -170,7 +251,7 @@ namespace lab_3_dynamic_structures.structures
         {
         }
 
-        public T Value { get; set; }
+        public T Value { get; }
         public SingleLinkedListNode<T> Next { get; set; }
     }
 }
